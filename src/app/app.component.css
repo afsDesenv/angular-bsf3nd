@@ -70,7 +70,7 @@ p {
   }
 
   .containerTriangulo {
-    margin: 30px 60px 60px 60px;
+    margin: 20px 25px 25px 60px;
     display: inline-block;
   }
 
@@ -78,8 +78,8 @@ p {
     position: relative;
     background-color: orange;
     text-align: left;
-    width: 10em;
-    height: 10em;
+    width: 5em;
+    height: 5em;
     border-top-right-radius: 30%;
     transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
   }
@@ -88,8 +88,8 @@ p {
     content: '';
     position: absolute;
     background-color: orange;
-    width: 10em;
-    height: 10em;
+    width: 5em;
+    height: 5em;
     border-top-right-radius: 30%;
     transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
   }
@@ -98,8 +98,8 @@ p {
     content: '';
     position: absolute;
     background-color: orange;
-    width: 10em;
-    height: 10em;
+    width: 5em;
+    height: 5em;
     border-top-right-radius: 30%;
     transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
   }
@@ -148,4 +148,66 @@ p {
     border: 10px solid #c82866;
     width: 100px;
     height: 100px;
+  }
+
+    .pie-chart {
+    display:block;
+    position: relative;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-image: conic-gradient(
+      gold 72deg, /* 20% 20*3.6 = 72 degrees */
+      green 0 126deg, /* 15%  (15 + 20) * 3,6 */
+      steelblue 0 288deg, /* 45%  (45 + 35) * 3,6 */
+      orange 0 /* 20% que faltam para 360 degrees */
+    );
+  }
+
+  .containerLupa {
+    display:flex;
+    width: 100px;
+    height: 100px;
+    background: #447D9B;
+    border-radius: 20%;
+    overflow: hidden;
+  }
+
+  .lupa {
+    display: block;
+    background: #275878;
+    width: 100px;
+    height: 40px;
+    position: relative;
+    border-radius: 20px 0 0 20px;
+    transform: rotateZ(45deg) scale(1.2);
+    transform-origin: 20px 20px;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+  }
+
+  .lupa::before {
+    content: '';
+    display: block;
+    background: #275878;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+  }
+
+  .lupa::after {
+    content: '';
+    display: block;
+    background: #FFF;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 35px;
+    border-radius: 5px;
   }
